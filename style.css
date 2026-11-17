@@ -1,0 +1,265 @@
+:root {
+    /* Fundo da página */
+    --fundo-pagina: #f8f5eb;
+    --texto-pagina: #17142e;
+
+    /* Fundos escuros e cards */
+    --fundo-escuro: #0d0b21;
+    --fundo-card: #11142c;
+    --fundo-card-claro: #1a1936;
+
+    /* Textos */
+    --texto-branco: #fff;
+    --texto-suave: #f4f2f8;
+
+    /* Bordas */
+    --borda-clara: rgb(255 255 255 / 70%);
+}
+
+* {
+     box-sizing: border-box; 
+    }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--fundo-pagina);
+    color: var(--texto-pagina);
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+main {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 38px 24px 52px;
+}
+
+.apresentacao {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    align-items: center;
+    gap: 34px;
+    min-height: 420px;
+    padding: 34px;
+    border: 1px solid var(--borda-clara);
+    border-radius: 26px;
+    background: linear-gradient(135deg, #13132d, var(--fundo-escuro));
+    box-shadow: 0 18px 44px rgb(13 11 33 / 18%);
+}
+
+.cartao-perfil {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border: 1px solid var(--borda-clara);
+    border-radius: 18px;
+    background: var(--fundo-escuro);
+    box-shadow: 0 9px 20px rgb(13 11 33 / 25%);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.cartao-perfil .foto-perfil {
+    position: absolute;
+    top: calc(50% - 30px);
+    right: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    transition: transform 0.5s ease;
+}
+
+.cartao-perfil:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 38px rgb(13 11 33 / 40%);
+}
+
+.cartao-perfil:hover .foto-perfil {
+    transform: translateY(-50%) scale(1.02);
+}
+
+.legenda-perfil {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 48px 18px 16px;
+    background: linear-gradient(transparent, rgb(7 7 19 / 94%));
+    color: var(--texto-branco);
+    text-shadow: 0 1px 3px rgb(0 0 0 / 60%);
+    pointer-events: none;
+}
+
+.nome-perfil,
+.subtitulo-perfil { margin: 0; }
+
+.nome-perfil {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.subtitulo-perfil {
+    margin-top: 3px;
+    color: var(--texto-suave);
+    font-size: 0.88rem;
+}
+
+.conteudo-apresentacao h1 {
+    margin: 0 0 22px;
+    color: var(--texto-branco);
+    font-size: 2.8rem;
+    line-height: 1.2;
+}
+
+.lista-curiosidades {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-curiosidades li {
+    padding: 11px 13px;
+    border: 1px solid rgb(255 255 255 / 38%);
+    border-radius: 10px;
+    background: rgb(8 8 24 / 72%);
+    color: var(--texto-branco);
+    font-size: 0.96rem;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
+}
+
+.lista-curiosidades li:hover {
+    transform: translateY(-7px) scale(1.03);
+    border-color: var(--texto-branco);
+    background: #1c1b36;
+    box-shadow: 0 16px 30px rgb(13 11 33 / 30%);
+}
+
+.secao-lugares { margin-top: 46px; }
+
+.cabecalho-secao { margin-bottom: 20px; }
+
+.secao-lugares > .cabecalho-secao h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--texto-branco);
+    color: var(--texto-pagina);
+    font-size: 1.8rem;
+}
+
+.grade-lugares {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card-lugar-fui,
+.card-lugar-quero {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--borda-clara);
+    border-radius: 18px;
+    background: linear-gradient(155deg, var(--fundo-card-claro), var(--fundo-card) 65%, var(--fundo-escuro));
+    box-shadow: 0 10px 24px rgb(13 11 33 / 22%), 0 3px 8px rgb(13 11 33 / 14%);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.card-lugar-fui:hover,
+.card-lugar-fui:focus-within,
+.card-lugar-quero:hover,
+.card-lugar-quero:focus-within {
+    transform: translateY(-7px) scale(1.015);
+    border-color: var(--texto-branco);
+    box-shadow: 0 18px 34px rgb(13 11 33 / 28%);
+}
+
+.card-lugar-fui > img,
+.card-lugar-quero > img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-bottom: 1px solid rgb(255 255 255 / 42%);
+}
+
+.informacoes-lugar {
+    display: flex;
+    min-height: 300px;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 21px;
+}
+
+.informacoes-lugar h3 {
+    margin: 0 0 12px;
+    color: var(--texto-branco);
+    font-size: 1.45rem;
+    line-height: 1.25;
+}
+
+.descricao-lugar {
+    margin: 0 0 20px;
+    color: var(--texto-suave);
+    font-size: 0.98rem;
+}
+
+.rodape-lugar {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid rgb(255 255 255 / 38%);
+}
+
+.localizacao-lugar {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 9px 13px;
+    border: 1px solid var(--borda-clara);
+    border-radius: 9px;
+    background: rgb(8 8 24 / 65%);
+    color: var(--texto-branco);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.localizacao-lugar:hover,
+.localizacao-lugar:focus-visible {
+    border-color: var(--texto-branco);
+    background: #211c37;
+}
+
+.navegacao-pagina {
+    margin-top: 38px;
+}
+
+.navegacao-pagina a {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid var(--borda-clara);
+    border-radius: 9px;
+    background: var(--fundo-escuro);
+    color: var(--texto-branco);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
+}
+
+.navegacao-pagina a:hover,
+.navegacao-pagina a:focus-visible {
+    transform: translateY(-3px) scale(1.03);
+    border-color: var(--texto-branco);
+    background: #17152d;
+}
